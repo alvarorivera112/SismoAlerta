@@ -5,27 +5,34 @@ body { font-family: 'Segoe UI', sans-serif; color: #fff; background: #000; }
 /* HERO */
 .hero {
   position: relative;
-  background-image: url("simulacro_nacional_2025_-2-_version1758235260800.png_633055319.webp");
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
+/* Fondo generado (difuminado) */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
+  background: url("A_landing_page_for_\"SismoAlerta,\"_an_earthquake_al.png") center/cover no-repeat;
+  filter: blur(6px) saturate(110%);
+  transform: scale(1.05);
   z-index: 0;
 }
 
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
-.hero-container { position: relative; z-index: 1; max-width: 700px; }
+/* Oscurecido para mantener legibilidad del texto */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.hero-container { position: relative; z-index: 2; max-width: 700px; }
 .hero-title { font-size: 4rem; margin-bottom: 16px; }
 .hero-subtitle { font-size: 1.4rem; margin-bottom: 30px; color: #dff7ff; }
 
