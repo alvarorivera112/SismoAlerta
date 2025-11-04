@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SismoAlerta</title>
-  <link rel="stylesheet" href="./styles.css?v=3">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles.css?v=4" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<header class="hero">
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-badge"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+      <span class="brand-name">SismoAlerta <b>EDU</b></span>
+    </a>
+    <nav class="topnav">
+      <a href="#caracteristicas">Características</a>
+      <a href="#info">Usuarios</a>
+      <a href="#info">Cómo funciona</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="top">
   <div class="hero-visual" aria-hidden="true">
     <span class="wave wave1"></span>
     <span class="wave wave2"></span>
@@ -19,12 +33,8 @@
   <div class="hero-overlay"></div>
   <div class="hero-container fade">
     <h1 class="hero-title">SismoAlerta</h1>
-    <p class="hero-subtitle">
-      Sistema educativo de alerta sísmica diseñado para guiar acciones seguras durante eventos sísmicos.
-    </p>
-    <div class="status-pill">
-      <span class="dot"></span> Simulacro listo
-    </div>
+    <p class="hero-subtitle">Sistema educativo de alerta sísmica diseñado para guiar acciones seguras durante eventos sísmicos.</p>
+    <div class="status-pill"><span class="dot"></span> Simulacro listo</div>
     <button id="btnMostrar" class="btn-primary">Conocer más</button>
   </div>
 </header>
@@ -66,10 +76,7 @@
 
   <div class="section fade-up about">
     <h2 class="section-title">Sobre SismoAlerta</h2>
-    <p class="muted-text">
-      Prototipo educativo desarrollado por estudiantes para fomentar cultura sísmica con tecnología accesible (Arduino/ESP32 + sensor MPU6050).
-      Ideal para escuelas y campus que buscan entrenar respuestas seguras ante sismos.
-    </p>
+    <p class="muted-text">Prototipo educativo desarrollado por estudiantes para fomentar cultura sísmica con tecnología accesible (Arduino/ESP32 + sensor MPU6050). Ideal para escuelas y campus que buscan entrenar respuestas seguras ante sismos.</p>
     <div class="pill-row">
       <span class="pill"><i class="fa-solid fa-bullseye"></i> Misión: prevención y educación</span>
       <span class="pill"><i class="fa-solid fa-lightbulb"></i> Visión: innovación social</span>
