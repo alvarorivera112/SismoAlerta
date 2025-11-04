@@ -2,74 +2,113 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: #1a1a1a;
+    background: #ffffff;
+    scroll-behavior: smooth;
 }
 
-/* Portada */
+/* Hero */
 .hero {
-    background: linear-gradient(to right, #007cff, #00b4ff);
-    color: white;
+    background: linear-gradient(to right, #006bff, #00c3ff);
+    padding: 150px 20px;
     text-align: center;
-    padding: 120px 20px;
+    color: white;
 }
-
-.btn {
-    background: white;
-    color: #007cff;
-    padding: 12px 24px;
-    border-radius: 8px;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+.btn-primary {
     display: inline-block;
     margin-top: 20px;
-    text-decoration: none;
+    padding: 12px 28px;
+    background: white;
+    color: #006bff;
+    border-radius: 8px;
     font-weight: bold;
-    transition: 0.3s;
+    text-decoration: none;
 }
 
-.btn:hover {
-    background: #e8e8e8;
-}
-
-/* Secciones */
+/* Section styles */
 .section {
-    padding: 70px 12%;
+    padding: 80px 10%;
     text-align: center;
 }
-
 .bg-light {
-    background: #f4f9ff;
+    background: #f7faff;
+}
+.section-desc {
+    max-width: 700px;
+    margin: auto;
+    font-size: 17px;
 }
 
-/* Tarjetas */
-.cards {
+/* Cards */
+.card-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.card {
+    background: white;
+    width: 260px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform .3s;
+}
+.card:hover {
+    transform: translateY(-8px);
+}
+.card i {
+    font-size: 38px;
+    color: #007cff;
+    margin-bottom: 10px;
+}
+
+/* Features */
+.feature-list {
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+}
+.feature-item {
+    padding: 12px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.feature-item i {
+    color: #007cff;
+}
+
+/* PMV */
+.pmv-list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* Opiniones */
+.opinion-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
-    margin-top: 30px;
 }
-
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 25px;
-    width: 270px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-}
-
-.card.small p {
-    font-size: 14px;
-}
-
-.features {
-    text-align: left;
-    max-width: 600px;
-    margin: 20px auto;
-    line-height: 1.8;
+.opinion-card {
+    width: 260px;
+    padding: 20px;
+    background: #e9f3ff;
+    border-radius: 10px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 25px;
+    padding: 20px;
     background: #00224d;
     color: white;
 }
