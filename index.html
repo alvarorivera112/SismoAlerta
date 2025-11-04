@@ -1,137 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SismoAlerta — Landing informativa</title>
-  <meta name="description" content="SismoAlerta: landing informativa sin formularios ni inicio de sesión. Sistema educativo de alerta sísmica." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SismoAlerta</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <input type="checkbox" id="nav-toggle" hidden>
-  <div class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">
-        <span class="brand-badge"><i class="fa-solid fa-wave-square"></i></span>
-        <span>SismoAlerta</span>
-      </a>
-      <label for="nav-toggle" class="hamburger"><i class="fa-solid fa-bars"></i></label>
-      <nav class="nav-links">
-        <a href="#caracteristicas">Características</a>
-        <a href="#usuarios">Usuarios</a>
-        <a href="#faq">Preguntas</a>
-        <a class="btn-ghost" href="#demo">Ver demo</a>
-        <a class="btn-solid" href="#cta">Empezar</a>
-      </nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-container fade">
+    <h1 class="hero-title">SismoAlerta</h1>
+    <p class="hero-subtitle">Sistema educativo de alerta sísmica diseñado para guiar acciones seguras durante eventos sísmicos.</p>
+    <button id="btnMostrar" class="btn-primary">Conocer más</button>
+  </div>
+</header>
+
+<!-- CONTENIDO DESPLEGABLE -->
+<section id="info" class="info hidden fade">
+
+  <!-- Usuarios beneficiados -->
+  <div class="section">
+    <h2 class="section-title">Usuarios Clave</h2>
+
+    <div class="card-grid">
+      <div class="card fade-up">
+        <i class="fa-solid fa-user-shield"></i>
+        <h3>Administradores</h3>
+        <button class="btn-toggle">Ver más</button>
+        <p class="hidden-text">Supervisan usuarios, accesos y eventos registrados para garantizar el control.</p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Técnicos</h3>
+        <button class="btn-toggle">Ver más</button>
+        <p class="hidden-text">Monitorean nodos, detectan fallas, realizan mantenimiento preventivo.</p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-person-chalkboard"></i>
+        <h3>Docentes</h3>
+        <button class="btn-toggle">Ver más</button>
+        <p class="hidden-text">Guían a los estudiantes durante simulacros sin generar pánico.</p>
+      </div>
     </div>
   </div>
 
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <div class="container hero-grid">
-      <div class="copy">
-        <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Alerta educativa en segundos</span>
-        <h1>Landing informativa, sin formularios ni inicio de sesión.</h1>
-        <p class="sub">Sistema educativo de alerta sísmica para instituciones: detección temprana, alertas visuales, simulacros guiados y monitoreo.</p>
-        <div class="hero-ctas">
-          <a href="#caracteristicas" class="btn-solid btn-lg">Ver características</a>
-          <a href="#usuarios" class="btn-outline btn-lg">Usuarios</a>
-        </div>
-      </div>
-      <div class="mockup" aria-hidden="true"></div>
-    </div>
-  </header>
+  <!-- Características -->
+  <div class="section fade-up">
+    <h2 class="section-title">Características Principales</h2>
+    <ul class="features">
+      <li><i class="fa-solid fa-wave-square"></i> Detección temprana de vibraciones sísmicas.</li>
+      <li><i class="fa-solid fa-bell"></i> Alertas visuales y auditivas inmediatas.</li>
+      <li><i class="fa-solid fa-chart-line"></i> Monitoreo en tiempo real de nodos.</li>
+      <li><i class="fa-solid fa-graduation-cap"></i> Modo simulacro educativo.</li>
+    </ul>
+  </div>
 
-  <!-- LOGOS -->
-  <section class="logos">
-    <div class="container logos-row">
-      <span class="logo-pill">Colegio Andino</span>
-      <span class="logo-pill">Red EduTech</span>
-      <span class="logo-pill">Campus Seguro</span>
-      <span class="logo-pill">STEM Perú</span>
-      <span class="logo-pill">OpenLab</span>
-    </div>
-  </section>
+</section>
 
-  <!-- CARACTERÍSTICAS -->
-  <section class="section" id="caracteristicas">
-    <div class="container">
-      <div class="section-head">
-        <h2>Características principales</h2>
-        <p class="muted">Todo lo que necesitas para educar y responder con calma.</p>
-      </div>
+<!-- FOOTER -->
+<footer class="footer">
+  <p>SismoAlerta — Proyecto académico 2025</p>
+</footer>
 
-      <div class="grid-cards">
-        <article class="card"><i class="fa-solid fa-wave-square"></i><h3>Detección temprana</h3><p class="muted">Sensado de vibraciones y activación anticipada de protocolos.</p></article>
-        <article class="card"><i class="fa-solid fa-bell"></i><h3>Alertas inmediatas</h3><p class="muted">Señales visuales y auditivas para docentes y estudiantes.</p></article>
-        <article class="card"><i class="fa-solid fa-chart-line"></i><h3>Panel informativo</h3><p class="muted">Vista demostrativa del estado de nodos y red educativa.</p></article>
-        <article class="card"><i class="fa-solid fa-graduation-cap"></i><h3>Modo simulacro</h3><p class="muted">Secuencias didácticas sin pánico, evaluaciones claras.</p></article>
-        <article class="card"><i class="fa-solid fa-shield-heart"></i><h3>Protocolos seguros</h3><p class="muted">Basado en normas de protección civil y seguridad escolar.</p></article>
-        <article class="card"><i class="fa-solid fa-plug-circle-bolt"></i><h3>Instalación sencilla</h3><p class="muted">Nodos plug-&-play y mantenimiento preventivo básico.</p></article>
-      </div>
-    </div>
-  </section>
+<script>
+  // Mostrar/Ocultar sección principal
+  document.getElementById("btnMostrar").addEventListener("click", function() {
+    const info = document.getElementById("info");
+    info.classList.toggle("visible");
+    this.textContent = this.textContent === "Conocer más" ? "Ocultar" : "Conocer más";
+  });
 
-  <!-- USUARIOS -->
-  <section class="section" id="usuarios">
-    <div class="container">
-      <div class="section-head">
-        <h2>Usuarios clave</h2>
-        <p class="muted">Diseñado para administradores, técnicos y docentes.</p>
-      </div>
-      <div class="users">
-        <div class="user"><i class="fa-solid fa-user-shield"></i><h3>Administradores</h3><p>Supervisan accesos, eventos y permisos.</p></div>
-        <div class="user"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Técnicos</h3><p>Monitorean nodos y realizan mantenimiento.</p></div>
-        <div class="user"><i class="fa-solid fa-person-chalkboard"></i><h3>Docentes</h3><p>Guían simulacros y promueven cultura sísmica.</p></div>
-      </div>
-    </div>
-  </section>
+  // Mostrar/Ocultar información por tarjeta
+  document.querySelectorAll(".btn-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const p = btn.nextElementSibling;
+      p.classList.toggle("visible-text");
+      btn.textContent = btn.textContent === "Ver más" ? "Ocultar" : "Ver más";
+    });
+  });
 
-  <!-- TESTIMONIOS -->
-  <section class="section">
-    <div class="container testimonials">
-      <div class="quote"><p>“Pasamos de simulacros caóticos a rutinas claras. El enfoque educativo nos dio tranquilidad.”</p><div class="avatar"><img src="https://i.pravatar.cc/80?img=32" alt=""><div><strong>María Salas</strong><br><span class="muted">Directora, I.E. La Montaña</span></div></div></div>
-      <div class="quote"><p>“La preparación de simulacros es mucho más ordenada. Excelente recurso para cultura sísmica.”</p><div class="avatar"><img src="https://i.pravatar.cc/80?img=14" alt=""><div><strong>Jorge Castillo</strong><br><span class="muted">Coordinador de Seguridad</span></div></div></div>
-    </div>
-  </section>
+  // Animación al hacer scroll
+  const elements = document.querySelectorAll(".fade, .fade-up");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add("visible-scroll");
+    });
+  }, { threshold: 0.2 });
+  elements.forEach(el => observer.observe(el));
+</script>
 
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-head"><h2>Preguntas frecuentes</h2><p class="muted">Detalles clave antes de implementar.</p></div>
-      <div class="faq">
-        <details><summary>¿Necesita internet?</summary><p class="muted">Las alertas locales funcionan sin conexión; la versión educativa requiere red solo para sincronizar datos.</p></details>
-        <details><summary>¿Cómo se calibra la sensibilidad?</summary><p class="muted">Los umbrales se definen según la zona sísmica y se ajustan en las pruebas iniciales.</p></details>
-        <details><summary>¿Funciona en universidades?</summary><p class="muted">Sí, los módulos se adaptan a distintos tamaños de campus.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section" id="cta">
-    <div class="container">
-      <div class="cta">
-        <h3>Construye una cultura sísmica en tu institución</h3>
-        <p class="muted">Landing informativa (sin formularios ni login). Ideal para presentaciones académicas o proyectos educativos.</p>
-        <div class="hero-ctas">
-          <a href="#caracteristicas" class="btn-outline btn-lg">Ver características</a>
-          <a href="#usuarios" class="btn-solid btn-lg">Ver usuarios</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container cols">
-      <div><div class="brand"><span class="brand-badge"><i class="fa-solid fa-wave-square"></i></span><span>SismoAlerta</span></div><p class="muted">Proyecto académico 2025 — landing informativa solo con HTML y CSS.</p></div>
-      <div><h4>Secciones</h4><ul><li><a href="#caracteristicas">Características</a></li><li><a href="#usuarios">Usuarios</a></li><li><a href="#faq">Preguntas</a></li></ul></div>
-      <div><h4>Recursos</h4><ul><li><a href="#top">Volver arriba</a></li><li><a href="https://alvarorivera112.github.io/sismoalerta/#caracteristicas">Enlace directo</a></li></ul></div>
-    </div>
-    <div class="container copyright">© 2025 SismoAlerta</div>
-  </footer>
 </body>
 </html>
