@@ -3,23 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SismoAlerta — Sistema educativo de alerta sísmica</title>
-
-  <meta name="description" content="SismoAlerta guía acciones seguras durante eventos sísmicos. Detección temprana, alertas inmediatas y modo simulacro para escuelas." />
-  <meta property="og:title" content="SismoAlerta" />
-  <meta property="og:description" content="Sistema educativo de alerta sísmica con detección temprana, alertas y simulacros." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#00e2ff" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%2300e2ff' d='M10 60l20-20 15 15 15-25 20 30-70 0z'/%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <title>SismoAlerta</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<header class="hero" role="banner">
-  <div class="hero-overlay" aria-hidden="true"></div>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-overlay"></div>
   <div class="hero-container fade">
     <h1 class="hero-title">SismoAlerta</h1>
     <p class="hero-subtitle">Sistema educativo de alerta sísmica diseñado para guiar acciones seguras durante eventos sísmicos.</p>
@@ -27,38 +19,39 @@
   </div>
 </header>
 
-<main id="contenido" class="main" role="main">
+<!-- CONTENIDO DESPLEGABLE -->
+<main>
   <section id="info" class="info hidden fade" aria-hidden="true">
-    <!-- Usuarios Clave -->
-    <section class="section" aria-labelledby="usuarios-clave">
-      <h2 class="section-title" id="usuarios-clave">Usuarios Clave</h2>
+    <!-- Usuarios beneficiados -->
+    <div class="section">
+      <h2 class="section-title" id="usuarios">Usuarios Clave</h2>
 
-      <div class="card-grid" role="list">
-        <article class="card fade-up" role="listitem">
+      <div class="card-grid">
+        <div class="card fade-up">
           <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
-          <h3 class="card-title">Administradores</h3>
+          <h3>Administradores</h3>
           <button class="btn-toggle" aria-expanded="false" aria-controls="desc-admin">Ver más</button>
           <p id="desc-admin" class="hidden-text">Supervisan usuarios, accesos y eventos registrados para garantizar el control.</p>
-        </article>
+        </div>
 
-        <article class="card fade-up" role="listitem">
+        <div class="card fade-up">
           <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
-          <h3 class="card-title">Técnicos</h3>
+          <h3>Técnicos</h3>
           <button class="btn-toggle" aria-expanded="false" aria-controls="desc-tec">Ver más</button>
-          <p id="desc-tec" class="hidden-text">Monitorean nodos, detectan fallas y realizan mantenimiento preventivo.</p>
-        </article>
+          <p id="desc-tec" class="hidden-text">Monitorean nodos, detectan fallas, realizan mantenimiento preventivo.</p>
+        </div>
 
-        <article class="card fade-up" role="listitem">
+        <div class="card fade-up">
           <i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>
-          <h3 class="card-title">Docentes</h3>
+          <h3>Docentes</h3>
           <button class="btn-toggle" aria-expanded="false" aria-controls="desc-doc">Ver más</button>
           <p id="desc-doc" class="hidden-text">Guían a los estudiantes durante simulacros sin generar pánico.</p>
-        </article>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- Características -->
-    <section class="section fade-up" aria-labelledby="caracteristicas">
+    <div class="section fade-up">
       <h2 class="section-title" id="caracteristicas">Características Principales</h2>
       <ul class="features">
         <li><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Detección temprana de vibraciones sísmicas.</li>
@@ -66,51 +59,72 @@
         <li><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Monitoreo en tiempo real de nodos.</li>
         <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Modo simulacro educativo.</li>
       </ul>
-    </section>
+    </div>
   </section>
 </main>
 
-<footer class="footer" role="contentinfo">
-  <p><strong>SismoAlerta</strong> — Proyecto académico 2025</p>
+<!-- FOOTER -->
+<footer class="footer">
+  <p>SismoAlerta — Proyecto académico 2025</p>
 </footer>
 
-<script defer>
-  // Mostrar/Ocultar sección principal con accesibilidad
+<script>
+  // Referencias
   const btnMostrar = document.getElementById("btnMostrar");
   const info = document.getElementById("info");
 
+  // Helper para abrir/cerrar con sincronización de aria
+  function setInfo(open) {
+    info.classList.toggle("visible", open);
+    info.classList.toggle("hidden", !open);
+    info.setAttribute("aria-hidden", String(!open));
+    btnMostrar.setAttribute("aria-expanded", String(open));
+    btnMostrar.textContent = open ? "Ocultar" : "Conocer más";
+  }
+
+  // Click del botón principal
   btnMostrar.addEventListener("click", () => {
-    const visible = info.classList.toggle("visible");
-    info.setAttribute("aria-hidden", String(!visible));
-    btnMostrar.setAttribute("aria-expanded", String(visible));
-    btnMostrar.textContent = visible ? "Ocultar" : "Conocer más";
-    if (visible) info.focus({ preventScroll: true });
+    const willOpen = !info.classList.contains("visible");
+    setInfo(willOpen);
+
+    // Si abrimos, navega a #caracteristicas si existe hash; si no, a #info
+    if (willOpen) {
+      const target = document.querySelector(location.hash || "#info");
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
   });
 
-  // Delegación para toggles por tarjeta
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".btn-toggle");
-    if (!btn) return;
-    const desc = document.getElementById(btn.getAttribute("aria-controls"));
-    const open = desc.classList.toggle("visible-text");
-    btn.setAttribute("aria-expanded", String(open));
-    btn.textContent = open ? "Ocultar" : "Ver más";
+  // Abrir automáticamente si llegamos con #caracteristicas
+  function openIfHash() {
+    if (location.hash === "#caracteristicas") {
+      setInfo(true);
+      const target = document.querySelector("#caracteristicas");
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  window.addEventListener("hashchange", openIfHash);
+  document.addEventListener("DOMContentLoaded", openIfHash);
+
+  // Mostrar/Ocultar información por tarjeta (con aria)
+  document.querySelectorAll(".btn-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const desc = document.getElementById(btn.getAttribute("aria-controls"));
+      const open = !desc.classList.contains("visible-text");
+      desc.classList.toggle("visible-text", open);
+      btn.setAttribute("aria-expanded", String(open));
+      btn.textContent = open ? "Ocultar" : "Ver más";
+    });
   });
 
-  // Animación al hacer scroll (IntersectionObserver)
+  // Animación al hacer scroll
   const elements = document.querySelectorAll(".fade, .fade-up");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add("visible-scroll");
     });
-  }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
-
-  elements.forEach((el) => observer.observe(el));
-
-  // Evitar animaciones si el usuario prefiere menos movimiento
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.documentElement.classList.add("reduce-motion");
-  }
+  }, { threshold: 0.2 });
+  elements.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
