@@ -5,7 +5,7 @@ body { font-family: 'Segoe UI', sans-serif; color: #fff; background: #000; }
 /* HERO */
 .hero {
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1567202995254-5f1a7bd5e4df?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("simulacro_nacional_2025_-2-_version1758235260800.png_633055319.webp");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -14,7 +14,17 @@ body { font-family: 'Segoe UI', sans-serif; color: #fff; background: #000; }
   align-items: center;
   text-align: center;
 }
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
 .hero-container { position: relative; z-index: 1; max-width: 700px; }
 .hero-title { font-size: 4rem; margin-bottom: 16px; }
 .hero-subtitle { font-size: 1.4rem; margin-bottom: 30px; color: #dff7ff; }
