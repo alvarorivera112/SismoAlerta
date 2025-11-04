@@ -1,88 +1,79 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
     color: #1a1a1a;
 }
 
-/* Hero */
+/* HERO */
 .hero {
-    background: linear-gradient(to right, #006bff, #00c3ff);
-    padding: 120px 20px;
+    position: relative;
+    background-image: url("https://images.unsplash.com/photo-1520975918319-ccd282f9bf3e");
+    background-size: cover;
+    background-position: center;
+    padding: 160px 20px;
     text-align: center;
     color: white;
 }
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+.hero-content { position: relative; z-index: 2; }
+.hero h1 { font-size: 4rem; margin-bottom: 10px; }
+.hero p { max-width: 650px; margin: auto; font-size: 18px; }
 
 .btn-primary {
-    background: white;
-    color: #006bff;
-    padding: 12px 28px;
-    border-radius: 8px;
+    background: #00e0ff;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: .3s;
+    font-weight: 700;
+    margin-top: 22px;
+    transition: 0.3s;
 }
-.btn-primary:hover { transform: scale(1.05); }
+.btn-primary:hover { transform: scale(1.08); }
 
-/* Oculto/Visible */
-.hidden { 
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease;
-    padding: 0 12%;
-}
-.show {
-    max-height: 2000px;
-    padding: 60px 12%;
-}
+/* CONTENIDO DESPLEGABLE */
+.hidden { max-height: 0; overflow: hidden; transition: max-height .6s ease, padding .4s; }
+.show { max-height: 2000px; padding: 60px 12%; }
 
-/* Cards de Usuarios */
-.card-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 30px;
-}
+.fade-section { opacity: 0; transition: opacity 0.7s ease-in; }
+.show.fade-section { opacity: 1; }
 
+/* CARDS */
+.card-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
 .card {
-    background: #ffffff;
+    background: white;
     width: 260px;
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: transform .3s;
 }
-.card i {
-    font-size: 42px;
-    color: #007cff;
-    margin-bottom: 10px;
-}
+.card:hover { transform: translateY(-8px); }
+.card i { font-size: 45px; color: #007cff; }
 
-/* Características */
-.features {
-    max-width: 650px;
-    margin: 40px auto 0;
-    list-style: none;
-    padding: 0;
-    font-size: 18px;
-}
-.features li {
-    margin: 12px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.features i {
-    color: #007cff;
-}
-
-/* Footer */
-footer {
-    background: #00224d;
+.btn-toggle {
+    margin-top: 12px;
+    background: #007cff;
     color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 60px;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
 }
+.hidden-text { display: none; margin-top: 10px; }
+.hidden-text.visible { display: block; }
+
+/* FEATURES */
+.features { list-style: none; padding: 0; max-width: 620px; margin: 40px auto;}
+.features li { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-size: 18px; }
+.features i { color: #007cff; }
+
+/* FOOTER */
+footer { background: #001d3d; color: white; text-align: center; padding: 20px; margin-top: 40px; }
