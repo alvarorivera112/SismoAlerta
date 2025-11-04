@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SismoAlerta</title>
-
-  <!-- Carga de estilos (con cache-buster para forzar actualización) -->
-  <link rel="stylesheet" href="./styles.css?v=2" />
-
-  <!-- Iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<!-- HERO (SIN CAMBIOS) -->
 <header class="hero">
+  <div class="hero-visual" aria-hidden="true">
+    <span class="wave wave1"></span>
+    <span class="wave wave2"></span>
+    <span class="wave wave3"></span>
+    <i class="fa-solid fa-bullhorn hero-icon" aria-hidden="true"></i>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-container fade">
     <h1 class="hero-title">SismoAlerta</h1>
-    <p class="hero-subtitle">Sistema educativo de alerta sísmica diseñado para guiar acciones seguras durante eventos sísmicos.</p>
+    <p class="hero-subtitle">
+      Sistema educativo de alerta sísmica diseñado para guiar acciones seguras durante eventos sísmicos.
+    </p>
+    <div class="status-pill">
+      <span class="dot"></span> Simulacro listo
+    </div>
     <button id="btnMostrar" class="btn-primary">Conocer más</button>
   </div>
 </header>
 
-<!-- CONTENIDO DESPLEGABLE -->
 <section id="info" class="info hidden fade">
-
-  <!-- Usuarios beneficiados (tuyo) -->
   <div class="section">
     <h2 class="section-title">Usuarios Clave</h2>
-
     <div class="card-grid">
       <div class="card fade-up">
         <i class="fa-solid fa-user-shield"></i>
@@ -37,14 +39,12 @@
         <button class="btn-toggle">Ver más</button>
         <p class="hidden-text">Supervisan usuarios, accesos y eventos registrados para garantizar el control.</p>
       </div>
-
       <div class="card fade-up">
         <i class="fa-solid fa-screwdriver-wrench"></i>
         <h3>Técnicos</h3>
         <button class="btn-toggle">Ver más</button>
         <p class="hidden-text">Monitorean nodos, detectan fallas, realizan mantenimiento preventivo.</p>
       </div>
-
       <div class="card fade-up">
         <i class="fa-solid fa-person-chalkboard"></i>
         <h3>Docentes</h3>
@@ -54,7 +54,6 @@
     </div>
   </div>
 
-  <!-- Características (tuya) -->
   <div class="section fade-up">
     <h2 class="section-title" id="caracteristicas">Características Principales</h2>
     <ul class="features">
@@ -65,7 +64,6 @@
     </ul>
   </div>
 
-  <!-- NUEVO: Sobre SismoAlerta -->
   <div class="section fade-up about">
     <h2 class="section-title">Sobre SismoAlerta</h2>
     <p class="muted-text">
@@ -79,7 +77,6 @@
     </div>
   </div>
 
-  <!-- NUEVO: Cómo funciona -->
   <div class="section fade-up">
     <h2 class="section-title">Cómo funciona</h2>
     <div class="steps">
@@ -106,7 +103,6 @@
     </div>
   </div>
 
-  <!-- NUEVO: Impacto educativo -->
   <div class="section fade-up impact alt-bg">
     <h2 class="section-title">Impacto educativo</h2>
     <ul class="impact-list">
@@ -117,7 +113,6 @@
     </ul>
   </div>
 
-  <!-- NUEVO: Ventajas -->
   <div class="section fade-up">
     <h2 class="section-title">Ventajas del proyecto</h2>
     <div class="benefits-grid">
@@ -144,7 +139,6 @@
     </div>
   </div>
 
-  <!-- NUEVO: Testimonios -->
   <div class="section fade-up">
     <h2 class="section-title">Lo que dicen</h2>
     <div class="testimonials">
@@ -162,23 +156,19 @@
       </div>
     </div>
   </div>
-
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <p>SismoAlerta — Proyecto académico 2025</p>
 </footer>
 
 <script>
-  // Mostrar/Ocultar sección principal (tu lógica)
   document.getElementById("btnMostrar").addEventListener("click", function() {
     const info = document.getElementById("info");
     info.classList.toggle("visible");
     this.textContent = this.textContent === "Conocer más" ? "Ocultar" : "Conocer más";
   });
 
-  // Mostrar/Ocultar información por tarjeta (tu lógica)
   document.querySelectorAll(".btn-toggle").forEach(btn => {
     btn.addEventListener("click", () => {
       const p = btn.nextElementSibling;
@@ -187,7 +177,6 @@
     });
   });
 
-  // Animación al hacer scroll (tu lógica)
   const elements = document.querySelectorAll(".fade, .fade-up");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
